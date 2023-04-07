@@ -2247,7 +2247,7 @@ class WooProductTemplateEpt(models.Model):
                 option_name = option.with_context(lang=instance.woo_lang_id.code).name
                 options.append(option_name)
             variation = False
-            if attribute_line.attribute_id.create_variant in ['always', 'dynamic']:
+            if attribute_line.attribute_id.use_as_variation:
                 variation = True
             attribute_name = attribute_line.attribute_id.with_context(lang=instance.woo_lang_id.code).name
             attribute_data = {

@@ -3,6 +3,11 @@
 from odoo import models, fields
 
 
+class ProductAttribute(models.Model):
+    _inherit = "product.attribute"
+    use_as_variation = fields.Boolean()
+
+
 class WooProductAttributeEpt(models.Model):
     _name = "woo.product.attribute.ept"
     _description = "Product Attribute"
